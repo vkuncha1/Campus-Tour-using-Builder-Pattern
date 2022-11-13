@@ -1,5 +1,7 @@
 package myCampusTour.driver;
 
+import myCampusTour.builderWorkshop.BuilderWorkshopI;
+
 /**
  * @author placeholder
  *
@@ -13,11 +15,16 @@ public class Driver {
 		 * build.xml. To avoid that, below condition is used
 		 */
 
-	    if (args.length != 2 || args[0].equals("${arg0}") || args[1].equals("${arg1}")) {
+//		DesignedCTour myFirstTour = new My2022FallTour();
+//		BuilderWorkshopI mbw = new My2022wImp();
+//		mbw.construct(myFirstTour);
 
-			System.err.println("Error: Incorrect number of arguments. Program accepts 2 argumnets.");
-			System.exit(0);
-		}
+
+//	    if (args.length != 2 || args[0].equals("${arg0}") || args[1].equals("${arg1}")) {
+//
+//			System.err.println("Error: Incorrect number of arguments. Program accepts 2 argumnets.");
+//			System.exit(0);
+//		}
 		
 		System.out.println("Hello World! Lets get started with the assignment");
 
