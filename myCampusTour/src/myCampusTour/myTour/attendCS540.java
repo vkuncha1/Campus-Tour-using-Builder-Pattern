@@ -34,6 +34,4 @@ public class attendCS540 implements CarbonFootprintI,CostI,DurationI,EffortI{
         return effort;
     }
 }
-
-
 }
