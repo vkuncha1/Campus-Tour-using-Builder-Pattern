@@ -1,5 +1,5 @@
 package myCampusTour.myTour;
 
 public interface CostI {
-    public double costCalc();
+    public double costCalc(String valueIn);
 }

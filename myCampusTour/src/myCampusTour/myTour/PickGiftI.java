@@ -1,4 +1,4 @@
 package myCampusTour.myTour;
 
-public interface pickGiftI {
+public interface PickGiftI {
 }
