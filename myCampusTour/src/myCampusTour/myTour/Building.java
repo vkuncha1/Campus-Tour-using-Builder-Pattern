@@ -1,51 +1,56 @@
 package myCampusTour.myTour;
 
-public class Building implements CarbonFootprintI,CostI,DurationI,EffortI{
+import myCampusTour.TourEnums.BuildingEnum;
+import myCampusTour.TourEnums.TransitEnum;
+
+public class Building implements VisitBuildingI {
     private double carbonFootPrint;
     private double cost;
     private int duration;
     private int effort;
 
 
+
+
     @Override
-    public double carbonFootCal(String rideIn) {
-        if (rideIn.equals("WATSON")){
+    public double carbonFootCal(String valueIn) {
+        if (valueIn.equals(TransitEnum.BUS.name())){
             return carbonFootPrint = 2.5;
         }
-        else if(rideIn.equals ("ITC")){
+        else if(valueIn.equals (TransitEnum.WALK.name())){
             return carbonFootPrint = 0.5;
         }
         return 0;
     }
 
     @Override
-    public double costCalc(String rideIn) {
-        if (rideIn.equals("WATSON")){
+    public double costCalc(String valueIn) {
+        if (valueIn.equals(TransitEnum.BUS.name())){
             return cost = 3.00;
         }
-        else if(rideIn.equals ("ITC")){
+        else if(valueIn.equals (TransitEnum.WALK.name())){
             return cost = 1.00;
         }
         return 0;
     }
 
     @Override
-    public int duractionCalc(String rideIn) {
-        if (rideIn.equals("WATSON")){
+    public int duractionCalc(String valueIn) {
+        if (valueIn.equals(TransitEnum.BUS.name())){
             return duration = 5;
         }
-        else if(rideIn.equals ("ITC")){
+        else if(valueIn.equals (TransitEnum.WALK.name())){
             return duration = 15;
         }
         return 0;
     }
 
     @Override
-    public int effortCalc(String rideIn) {
-        if (rideIn.equals("WATSON")){
+    public int effortCalc(String valueIn) {
+        if (valueIn.equals(TransitEnum.BUS.name())){
             return effort = 20;
         }
-        else if(rideIn.equals ("ITC")){
+        else if(valueIn.equals (TransitEnum.WALK.name())){
             return effort = 70;
         }
         return 0;

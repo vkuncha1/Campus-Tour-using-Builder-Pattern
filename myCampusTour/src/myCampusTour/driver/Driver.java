@@ -1,6 +1,10 @@
 package myCampusTour.driver;
 
+import myCampusTour.TourEnums.*;
 import myCampusTour.builderWorkshop.BuilderWorkshopI;
+import myCampusTour.builderWorkshop.CampusTour;
+import myCampusTour.builderWorkshop.CampusTourBuilder;
+import myCampusTour.builderWorkshop.CampusTourI;
 
 /**
  * @author placeholder
@@ -15,9 +19,9 @@ public class Driver {
 		 * build.xml. To avoid that, below condition is used
 		 */
 
-//		DesignedCTour myFirstTour = new My2022FallTour();
-//		BuilderWorkshopI mbw = new My2022wImp();
-//		mbw.construct(myFirstTour);
+		CampusTourI myFirstTour = new CampusTour(BuildingEnum.WATSON, CafeteriaEnum.CIW, GiftEnum.EVENT_CENTER, LectureEnum.CS540, TransitEnum.WALK);
+		BuilderWorkshopI mbw = new CampusTourBuilder();
+		mbw.construct((CampusTour) myFirstTour);
 
 
 //	    if (args.length != 2 || args[0].equals("${arg0}") || args[1].equals("${arg1}")) {
@@ -25,8 +29,7 @@ public class Driver {
 //			System.err.println("Error: Incorrect number of arguments. Program accepts 2 argumnets.");
 //			System.exit(0);
 //		}
-		
-		System.out.println("Hello World! Lets get started with the assignment");
+
 
 	}
 }

@@ -1,6 +1,6 @@
 package myCampusTour.myTour;
 
-public class Gift implements CarbonFootprintI,CostI,DurationI,EffortI{
+public class Gift implements PickGiftI{
     private double carbonFootPrint;
     private double cost;
     private int duration;
