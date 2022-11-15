@@ -16,7 +16,7 @@ public class Cafeteria implements VisitCafetiaI {
     @Override
     public double carbonFootCal(String valueIn) {
         if (valueIn.equals(CafeteriaEnum.CIW.name())){
-            return carbonFootPrint = 0.7;
+            return carbonFootPrint = 1.7;
         }
         else if(valueIn.equals(CafeteriaEnum.MOUNTAIN_VIEW.name())){
             return carbonFootPrint = 0.6;
@@ -34,7 +34,7 @@ public class Cafeteria implements VisitCafetiaI {
             return cost = 2.00;
         }
         else if(valueIn.equals(CafeteriaEnum.MOUNTAIN_VIEW.name())){
-            return cost = 1.5;
+            return cost = 2.00 + (0.05*2.00);
         }
         return 0;
     }
@@ -46,10 +46,10 @@ public class Cafeteria implements VisitCafetiaI {
     @Override
     public int duractionCalc(String valueIn) {
         if (valueIn.equals(CafeteriaEnum.CIW.name())){
-            return duration = 10;
+            return duration = 30;
         }
         else if(valueIn.equals(CafeteriaEnum.MOUNTAIN_VIEW.name())){
-            return duration = 15;
+            return duration = 5;
         }
         return 0;
     }
@@ -64,7 +64,7 @@ public class Cafeteria implements VisitCafetiaI {
             return effort = 20;
         }
         else if(valueIn.equals(CafeteriaEnum.MOUNTAIN_VIEW.name())){
-            return effort = 35;
+            return effort = 3;
         }
         return 0;
     }

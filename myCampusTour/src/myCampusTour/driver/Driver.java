@@ -7,7 +7,8 @@ import myCampusTour.builderWorkshop.CampusTourBuilder;
 import myCampusTour.builderWorkshop.CampusTourI;
 
 /**
- * @author placeholder
+ * Driver code used by student for write their orientation plan.
+ * @author venkata achyuth kunchapu
  *
  */
 public class Driver {
@@ -18,10 +19,12 @@ public class Driver {
 		 * argument value is not given java takes the default value specified in
 		 * build.xml. To avoid that, below condition is used
 		 */
-
-		CampusTourI myFirstTour = new CampusTour(BuildingEnum.WATSON, CafeteriaEnum.CIW, GiftEnum.EVENT_CENTER, LectureEnum.CS540, TransitEnum.WALK);
+		//First Instance
+		CampusTourI myFirstTour = new CampusTour(BuildingEnum.WATSON, CafeteriaEnum.MOUNTAIN_VIEW, GiftEnum.EVENT_CENTER, LectureEnum.CS542, TransitEnum.WALK);
 		BuilderWorkshopI mbw = new CampusTourBuilder();
 		mbw.construct((CampusTour) myFirstTour);
+		//Second Instance
+
 
 
 //	    if (args.length != 2 || args[0].equals("${arg0}") || args[1].equals("${arg1}")) {

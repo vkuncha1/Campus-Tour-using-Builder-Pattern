@@ -2,6 +2,9 @@ package myCampusTour.builderWorkshop;
 
 import myCampusTour.TourEnums.*;
 import myCampusTour.myTour.*;
+import myCampusTour.util.FileDisplayInterface;
+import myCampusTour.util.Results;
+import myCampusTour.util.StdoutDisplayInterface;
 
 public class CampusTour implements CampusTourI {
     private double carbonfootprint;
@@ -22,6 +25,8 @@ public class CampusTour implements CampusTourI {
     PickGiftI gift = new Gift();
     AttendLectureI lecture =new Lecture();
 
+    Results result = new Results();
+
     public CampusTour(BuildingEnum buildingIn, CafeteriaEnum cafeteriaIn, GiftEnum giftIn, LectureEnum lectureIn, TransitEnum transitIn){
         buildingName = buildingIn.name();
         cafeteriaName = cafeteriaIn.name();
@@ -36,11 +41,6 @@ public class CampusTour implements CampusTourI {
     }
 
 
-    public void print_content(String strIn){
-        System.out.println("\n");
-        System.out.println(outputStr);
-    }
-
     public void visitBuilding(){
         String buildingVisited = buildingName;
         if (transitBy.equals("BUS")){
@@ -50,19 +50,16 @@ public class CampusTour implements CampusTourI {
             duration = building.duractionCalc(transitBy);
             effort = building.effortCalc(transitBy);
             outputStr = "Selected Building : "+buildingVisited+" ,Transit BY: BUS" +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
-            print_content(outputStr);
-
-
-
-
-            System.out.println("Welcome to the Building, You have reached by Bus");
+            result.TerminalOutput(outputStr);
+            result.FileOutputDisplay(outputStr);
         } else if (transitBy.equals("WALK")) {
             carbonfootprint = building.carbonFootCal(transitBy);
             cost = building.costCalc(transitBy);
             duration = building.duractionCalc(transitBy);
             effort = building.effortCalc(transitBy);
             outputStr = "Selected Building : "+buildingVisited+" ,Transit BY: Walk" +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
-            print_content(outputStr);
+            result.TerminalOutput(outputStr);
+            result.FileOutputDisplay(outputStr);
         }
     }
 
@@ -73,14 +70,16 @@ public class CampusTour implements CampusTourI {
             duration = gift.duractionCalc(GiftEnum.UNIVERSITY_UNION.name());
             effort = gift.effortCalc(GiftEnum.UNIVERSITY_UNION.name());
             outputStr = "Selected Location to Pick Gift : "+giftLocation +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
-            print_content(outputStr);
+            result.TerminalOutput(outputStr);
+            result.FileOutputDisplay(outputStr);
         } else if (giftLocation.equals("EVENT_CENTER")) {
             carbonfootprint = gift.carbonFootCal(GiftEnum.EVENT_CENTER.name());
             cost = gift.costCalc(GiftEnum.EVENT_CENTER.name());
             duration = gift.duractionCalc(GiftEnum.EVENT_CENTER.name());
             effort = gift.effortCalc(GiftEnum.EVENT_CENTER.name());
             outputStr = "Selected Location to Pick Gift : "+giftLocation +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
-            print_content(outputStr);
+            result.TerminalOutput(outputStr);
+            result.FileOutputDisplay(outputStr);
         }
     }
 
@@ -91,14 +90,16 @@ public class CampusTour implements CampusTourI {
             duration = cafeteria.duractionCalc(CafeteriaEnum.CIW.name());
             effort = cafeteria.effortCalc(CafeteriaEnum.CIW.name());
             outputStr = "Selected Cafeteria for Lunch : "+cafeteriaName+"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
-            print_content(outputStr);
-        } else if (cafeteriaName.equals("MOUTAIN_VIEW")) {
+            result.TerminalOutput(outputStr);
+            result.FileOutputDisplay(outputStr);
+        } else if (cafeteriaName.equals("MOUNTAIN_VIEW")) {
             carbonfootprint = cafeteria.carbonFootCal(CafeteriaEnum.MOUNTAIN_VIEW.name());
             cost = cafeteria.costCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
             duration = cafeteria.duractionCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
             effort = cafeteria.effortCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
-            outputStr = "Selected Cafeteria for Lunch : "+cafeteriaName +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
-            print_content(outputStr);
+            outputStr = "Selected Cafeteria for Lunch : "+cafeteriaName +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"$ [Orginal Cost:"+(cost/1.05)+"$ Surcharge: "+(0.05*(cost/1.05))+"$]\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
+            result.TerminalOutput(outputStr);
+            result.FileOutputDisplay(outputStr);
         }
     }
 
@@ -109,14 +110,16 @@ public class CampusTour implements CampusTourI {
             duration = lecture.duractionCalc(LectureEnum.CS540.name());
             effort = lecture.effortCalc(LectureEnum.CS540.name());
             outputStr = "Selected Lecture : "+lectureName +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
-            print_content(outputStr);
+            result.TerminalOutput(outputStr);
+            result.FileOutputDisplay(outputStr);
         } else if (lectureName.equals("CS542")) {
             carbonfootprint = lecture.carbonFootCal(LectureEnum.CS542.name());
             cost = lecture.costCalc(LectureEnum.CS542.name());
             duration = lecture.duractionCalc(LectureEnum.CS542.name());
             effort = lecture.effortCalc(LectureEnum.CS542.name());
-            outputStr = "Selected Lecture : "+lectureName +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
-            print_content(outputStr);
+            outputStr = "Selected Lecture : "+lectureName +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"$ [Orginal Cost:"+(cost/1.10)+"$ Surcharge: "+(0.10*(cost/1.10))+"$]\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
+            result.TerminalOutput(outputStr);
+            result.FileOutputDisplay(outputStr);
         }
 
     }

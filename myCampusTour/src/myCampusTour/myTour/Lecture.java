@@ -28,10 +28,11 @@ public class Lecture implements AttendLectureI {
     @Override
     public double costCalc(String valueIn) {
         if (valueIn.equals("CS542")){
-            return cost = 20;
+            return cost = 20 + (0.1*(20));
+
         }
         else if(valueIn.equals("CS540")){
-            return cost = 20 + (0.1*(20));
+            return cost = 20;
         }
         return 0;
     }
