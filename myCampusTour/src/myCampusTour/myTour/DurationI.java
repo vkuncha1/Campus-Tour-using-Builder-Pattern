@@ -1,5 +1,5 @@
 package myCampusTour.myTour;
 
 public interface DurationI {
-    public int duractionCalc(String valueIn);
+    public int durationCalc(String valueIn);
 }

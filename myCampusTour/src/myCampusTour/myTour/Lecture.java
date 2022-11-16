@@ -42,7 +42,7 @@ public class Lecture implements AttendLectureI {
      * @return
      */
     @Override
-    public int duractionCalc(String valueIn) {
+    public int durationCalc(String valueIn) {
         if (valueIn.equals("CS542")){
             return duration = 20;
         }

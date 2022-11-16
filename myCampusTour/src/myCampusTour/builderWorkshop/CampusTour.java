@@ -47,7 +47,7 @@ public class CampusTour implements CampusTourI {
             System.out.println(transitBy);
             carbonfootprint = building.carbonFootCal(transitBy);
             cost = building.costCalc(transitBy);
-            duration = building.duractionCalc(transitBy);
+            duration = building.durationCalc(transitBy);
             effort = building.effortCalc(transitBy);
             outputStr = "Selected Building : "+buildingVisited+" ,Transit BY: BUS" +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
             result.TerminalOutput(outputStr);
@@ -55,7 +55,7 @@ public class CampusTour implements CampusTourI {
         } else if (transitBy.equals("WALK")) {
             carbonfootprint = building.carbonFootCal(transitBy);
             cost = building.costCalc(transitBy);
-            duration = building.duractionCalc(transitBy);
+            duration = building.durationCalc(transitBy);
             effort = building.effortCalc(transitBy);
             outputStr = "Selected Building : "+buildingVisited+" ,Transit BY: Walk" +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
             result.TerminalOutput(outputStr);
@@ -67,7 +67,7 @@ public class CampusTour implements CampusTourI {
         if (giftLocation.equals("UNIVERSITY_UNION")){
             carbonfootprint = gift.carbonFootCal(GiftEnum.UNIVERSITY_UNION.name());
             cost = gift.costCalc(GiftEnum.UNIVERSITY_UNION.name());
-            duration = gift.duractionCalc(GiftEnum.UNIVERSITY_UNION.name());
+            duration = gift.durationCalc(GiftEnum.UNIVERSITY_UNION.name());
             effort = gift.effortCalc(GiftEnum.UNIVERSITY_UNION.name());
             outputStr = "Selected Location to Pick Gift : "+giftLocation +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
             result.TerminalOutput(outputStr);
@@ -75,7 +75,7 @@ public class CampusTour implements CampusTourI {
         } else if (giftLocation.equals("EVENT_CENTER")) {
             carbonfootprint = gift.carbonFootCal(GiftEnum.EVENT_CENTER.name());
             cost = gift.costCalc(GiftEnum.EVENT_CENTER.name());
-            duration = gift.duractionCalc(GiftEnum.EVENT_CENTER.name());
+            duration = gift.durationCalc(GiftEnum.EVENT_CENTER.name());
             effort = gift.effortCalc(GiftEnum.EVENT_CENTER.name());
             outputStr = "Selected Location to Pick Gift : "+giftLocation +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
             result.TerminalOutput(outputStr);
@@ -87,7 +87,7 @@ public class CampusTour implements CampusTourI {
         if (cafeteriaName.equals("CIW")){
             carbonfootprint = cafeteria.carbonFootCal(CafeteriaEnum.CIW.name());
             cost = cafeteria.costCalc(CafeteriaEnum.CIW.name());
-            duration = cafeteria.duractionCalc(CafeteriaEnum.CIW.name());
+            duration = cafeteria.durationCalc(CafeteriaEnum.CIW.name());
             effort = cafeteria.effortCalc(CafeteriaEnum.CIW.name());
             outputStr = "Selected Cafeteria for Lunch : "+cafeteriaName+"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
             result.TerminalOutput(outputStr);
@@ -95,7 +95,7 @@ public class CampusTour implements CampusTourI {
         } else if (cafeteriaName.equals("MOUNTAIN_VIEW")) {
             carbonfootprint = cafeteria.carbonFootCal(CafeteriaEnum.MOUNTAIN_VIEW.name());
             cost = cafeteria.costCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
-            duration = cafeteria.duractionCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
+            duration = cafeteria.durationCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
             effort = cafeteria.effortCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
             outputStr = "Selected Cafeteria for Lunch : "+cafeteriaName +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"$ [Orginal Cost:"+(cost/1.05)+"$ Surcharge: "+(0.05*(cost/1.05))+"$]\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
             result.TerminalOutput(outputStr);
@@ -107,7 +107,7 @@ public class CampusTour implements CampusTourI {
         if (lectureName.equals("CS540")){
             carbonfootprint = lecture.carbonFootCal(LectureEnum.CS540.name());
             cost = lecture.costCalc(LectureEnum.CS540.name());
-            duration = lecture.duractionCalc(LectureEnum.CS540.name());
+            duration = lecture.durationCalc(LectureEnum.CS540.name());
             effort = lecture.effortCalc(LectureEnum.CS540.name());
             outputStr = "Selected Lecture : "+lectureName +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
             result.TerminalOutput(outputStr);
@@ -115,7 +115,7 @@ public class CampusTour implements CampusTourI {
         } else if (lectureName.equals("CS542")) {
             carbonfootprint = lecture.carbonFootCal(LectureEnum.CS542.name());
             cost = lecture.costCalc(LectureEnum.CS542.name());
-            duration = lecture.duractionCalc(LectureEnum.CS542.name());
+            duration = lecture.durationCalc(LectureEnum.CS542.name());
             effort = lecture.effortCalc(LectureEnum.CS542.name());
             outputStr = "Selected Lecture : "+lectureName +"\n"+ "Carbonfoot Print: "+ carbonfootprint +"\n"+"Cost : "+cost +"$ [Orginal Cost:"+(cost/1.10)+"$ Surcharge: "+(0.10*(cost/1.10))+"$]\n"+"Duration: "+ duration+"\n"+"Effort: "+ effort;
             result.TerminalOutput(outputStr);

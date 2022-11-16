@@ -40,7 +40,7 @@ public class Gift implements PickGiftI{
      * @return
      */
     @Override
-    public int duractionCalc(String valueIn) {
+    public int durationCalc(String valueIn) {
         if (valueIn.equals("EVENT_CENTER")){
             return duration = 10;
         } else if (valueIn.equals("UNIVERSITY_UNION")) {

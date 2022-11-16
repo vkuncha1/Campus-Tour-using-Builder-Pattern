@@ -35,7 +35,7 @@ public class Building implements VisitBuildingI {
     }
 
     @Override
-    public int duractionCalc(String valueIn) {
+    public int durationCalc(String valueIn) {
         if (valueIn.equals(TransitEnum.BUS.name())){
             return duration = 5;
         }
