@@ -1,43 +1,73 @@
-# cs542-fall-22-assign3
-
-## Name: 
-
+# CS542: Assignment 3
+## Name: Venkata Achyuth Kunchapu
+No of Slack days used : 0
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 
 
-Following are the commands and the instructions to run ANT on your project.
-#### Note: build.xml is present in myCampusTour/src folder.
+Following are the commands and the instructions to run ANT on project.
+#### Note: build.xml is present in studentCoursesBackup/src folder.
+#### Note: courseInfo.txt, coursePrefs.txt, errorLog.txt, regConflicts.txt, and regResults.txt to be placed in same directory level as src
+
+Assumptions : Input files are well formatted, and no dupulicates, Input File always available and not empty, UPDATE_VALUE is not empty
 
 -----------------------------------------------------------------------
-## Instruction to clean:
+## How to clean ?
 
-####Command: ant -buildfile myCampusTour/src/build.xml clean
+Command: ant -buildfile studentRecordsBackupTree/src/build.xml clean
 
-Description: It cleans up all the .class files that were generated when you
-compiled your code.
+Description: It cleans up all the .class files that were generated when code was compiled.
 
 -----------------------------------------------------------------------
-## Instruction to compile:
+## How to compile ?
 
-####Command: ant -buildfile myCampusTour/src/build.xml all
+Command: ant -buildfile studentRecordsBackupTree/src/build.xml all
 
 Description: Compiles your code and generates .class files inside the BUILD folder.
 
 -----------------------------------------------------------------------
-## Instruction to run:
+## How to run ?
 
-####Command: ant -buildfile myCampusTour/src/build.xml run -Darg0=<bstError.txt> -Darg1=<UPDATE_VALUE> 
+Command: ant -buildfile studentRecordsBackupTree/src/build.xml run -Darg0=bstInput.txt -Darg1=bstOutput.txt -Darg2=errorLog.txt -Darg3=1 -Darg4=3
 
-## you can run it in the following manner:
 
-ant -buildfile myCampusTour/src/build.xml run -Darg0=campusTourError.txt -Darg1=2
 
-Note: Arguments accept the absolute path of the files.
+
+-----------------------------------------------------------------------
+## Sample Input and Output
+
+
+
+#### Terminal Output
+
+
+
+
+#### errorLog.txt
+
+
+
+-----------------------------------------------------------------------
+
+
+#### Choice of Data Structure 
+
+
+
+
 
 -----------------------------------------------------------------------
 ## Description:
 
+
+
+ 
+
+-----------------------------------------------------------------------
+## References:
+
+1. https://www.geeksforgeeks.org/binary-search-tree-data-structure/
+2. https://www.geeksforgeeks.org/filewriter-class-in-java/
 
 -----------------------------------------------------------------------
 ### Academic Honesty statement:
@@ -52,7 +82,6 @@ grade of 0 for the involved assignment for my first offense and that I
 will receive a grade of F for the course for any additional
 offense.""
 
-Date: -- 
-
+Date: -- 11/17/2022
 
 
