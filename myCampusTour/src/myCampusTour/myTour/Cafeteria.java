@@ -8,11 +8,11 @@ public class Cafeteria implements VisitCafetiaI {
     private int duration;
     private int effort;
 
-    CostI costDecl = new Cost();
-    Cost
-    DurationI durationDecl = new Duration();
-    EffortI effortDecl = new Effort();
-    CarbonFootprintI carbonFootprintDecl = new CarbonFootPrint();
+//    CostI costDecl = new Cost();
+//    CostI
+//    DurationI durationDecl = new Duration();
+//    EffortI effortDecl = new Effort();
+//    CarbonFootprintI carbonFootprintDecl = new CarbonFootPrint();
 
 
 
@@ -24,7 +24,7 @@ public class Cafeteria implements VisitCafetiaI {
     @Override
     public double carbonFootCal(String valueIn) {
         if (valueIn.equals(CafeteriaEnum.CIW.name())){
-            costDecl.CarbonFootPrint =
+//            costDecl.CarbonFootPrint =
             return carbonFootPrint = 1.7;
         }
         else if(valueIn.equals(CafeteriaEnum.MOUNTAIN_VIEW.name())){

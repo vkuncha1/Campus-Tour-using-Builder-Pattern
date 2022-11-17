@@ -11,7 +11,10 @@ public class Building implements VisitBuildingI {
 
 
 
-
+    /**
+     * @param valueIn
+     * @return
+     */
     @Override
     public double carbonFootCal(String valueIn) {
         if (valueIn.equals(TransitEnum.BUS.name())){

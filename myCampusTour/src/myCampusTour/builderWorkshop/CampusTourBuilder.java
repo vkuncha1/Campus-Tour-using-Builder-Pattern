@@ -6,5 +6,6 @@ public class CampusTourBuilder implements BuilderWorkshopI{
         ct.pickGift();
         ct.selectCafeteria();
         ct.attendLecture();
+        ct.displayTour();
     }
 }
