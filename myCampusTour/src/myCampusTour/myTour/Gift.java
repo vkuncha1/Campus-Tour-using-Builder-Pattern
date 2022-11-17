@@ -1,5 +1,10 @@
 package myCampusTour.myTour;
 
+
+/**
+ * Picking Gift
+ * carbonfootprint, cost, effort, duration associated with it.
+ */
 public class Gift implements PickGiftI{
     CarbonFootprintI carbonfootprintIns = new CarbonFootPrint();
     CostI costIns = new Cost();
@@ -7,8 +12,9 @@ public class Gift implements PickGiftI{
     EffortI effortIns = new Effort();
 
     /**
+     * To get the Carbonfootprint associated with activity.
      * @param valueIn
-     * @return
+     * @return carbonfootprint
      */
     @Override
     public double carbonFootCal(String valueIn) {
@@ -17,6 +23,11 @@ public class Gift implements PickGiftI{
         return co2Evaluated;
     }
 
+    /**
+     * To get the Cost associated with activity.
+     * @param valueIn
+     * @return cost
+     */
     @Override
     public double costCalc(String valueIn) {
         double costEvaluated;
@@ -24,12 +35,23 @@ public class Gift implements PickGiftI{
         return costEvaluated;
     }
 
+    /**
+     * To get the Duration associated with activity.
+     * @param valueIn
+     * @return duration
+     */
     @Override
     public int durationCalc(String valueIn) {
         int durationEvaluated;
         durationEvaluated = durationIns.getDuration(valueIn);
         return durationEvaluated;
     }
+
+    /**
+     * To get the Effort associated with activity.
+     * @param valueIn
+     * @return effort
+     */
 
     @Override
     public int effortCalc(String valueIn) {

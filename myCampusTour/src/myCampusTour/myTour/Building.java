@@ -1,9 +1,9 @@
 package myCampusTour.myTour;
 
-import myCampusTour.TourEnums.BuildingEnum;
-import myCampusTour.TourEnums.TransitEnum;
-import myCampusTour.myTour.CarbonFootprintI;
-
+/**
+ * Visiting Building
+ * carbonfootprint, cost, effort, duration associated with it.
+ */
 public class Building implements VisitBuildingI {
 
     CarbonFootprintI carbonfootprintIns = new CarbonFootPrint();
@@ -12,8 +12,9 @@ public class Building implements VisitBuildingI {
     EffortI effortIns = new Effort();
 
     /**
+     * To get the Carbonfootprint associated with activity.
      * @param valueIn
-     * @return
+     * @return carbonfootprint
      */
     @Override
     public double carbonFootCal(String valueIn) {
@@ -22,6 +23,11 @@ public class Building implements VisitBuildingI {
         return co2Evaluated;
     }
 
+    /**
+     * To get the Cost associated with activity.
+     * @param valueIn
+     * @return cost
+     */
     @Override
     public double costCalc(String valueIn) {
         double costEvaluated;
@@ -29,6 +35,11 @@ public class Building implements VisitBuildingI {
         return costEvaluated;
     }
 
+    /**
+     * To get the Duration associated with activity.
+     * @param valueIn
+     * @return duration
+     */
     @Override
     public int durationCalc(String valueIn) {
         int durationEvaluated;
@@ -36,6 +47,11 @@ public class Building implements VisitBuildingI {
         return durationEvaluated;
     }
 
+    /**
+     * To get the Effort associated with activity.
+     * @param valueIn
+     * @return effort
+     */
     @Override
     public int effortCalc(String valueIn) {
         int effortEvaluated;

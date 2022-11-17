@@ -8,6 +8,7 @@ import myCampusTour.TourEnums.TransitEnum;
 public class CarbonFootPrint implements CarbonFootprintI{
     private double carbonfootprint;
 
+    //To String Method.
     @Override
     public String toString() {
         return "CarbonFootPrint{" +
@@ -16,8 +17,9 @@ public class CarbonFootPrint implements CarbonFootprintI{
     }
 
     /**
+     * Getting CarbonPrint value based on activity
      * @param valueIn
-     * @return
+     * @return carbonfootprint
      */
     @Override
     public double getCarbonfootprint(String valueIn) {

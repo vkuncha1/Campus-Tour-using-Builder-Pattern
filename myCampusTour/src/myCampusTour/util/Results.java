@@ -33,6 +33,7 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
 
 
     /**
+     * To print output in terminal
      * @param valueIn
      */
     @Override
@@ -42,6 +43,11 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
     }
 
 
+
+    /**
+     * To print errors in errorfile
+     * @param errorIn
+     */
     public void writeError(String errorIn){
         try{
             String currentpath = new File("").getAbsolutePath();

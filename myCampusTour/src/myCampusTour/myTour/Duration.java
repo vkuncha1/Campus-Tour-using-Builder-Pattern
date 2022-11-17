@@ -9,6 +9,7 @@ public class Duration implements DurationI{
     private int duration;
 
 
+    //To String Method.
     @Override
     public String toString() {
         return "Duration{" +
@@ -18,8 +19,9 @@ public class Duration implements DurationI{
 
 
     /**
+     * Getting duration value based on activity
      * @param valueIn
-     * @return
+     * @return duration
      */
     @Override
     public int getDuration(String valueIn) {

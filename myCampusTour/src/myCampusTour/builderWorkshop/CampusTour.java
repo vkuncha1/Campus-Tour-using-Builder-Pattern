@@ -1,13 +1,31 @@
 package myCampusTour.builderWorkshop;
 
-import myCampusTour.TourEnums.*;
-import myCampusTour.myTour.*;
-import myCampusTour.util.FileDisplayInterface;
+import myCampusTour.TourEnums.LectureEnum;
+import myCampusTour.TourEnums.CafeteriaEnum;
+import myCampusTour.TourEnums.TransitEnum;
+import myCampusTour.TourEnums.BuildingEnum;
+import myCampusTour.TourEnums.GiftEnum;
+import myCampusTour.myTour.VisitBuildingI;
+import myCampusTour.myTour.AttendLectureI;
+import myCampusTour.myTour.PickGiftI;
+import myCampusTour.myTour.VisitCafetiaI;
+import myCampusTour.myTour.Building;
+import myCampusTour.myTour.Gift;
+import myCampusTour.myTour.Lecture;
+import myCampusTour.myTour.Cafeteria;
 import myCampusTour.util.Results;
-import myCampusTour.util.StdoutDisplayInterface;
 
 import java.text.DecimalFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+
+/**
+ * CampusTour class implementing responsible for calculating the
+ * cost, effort, carbonfootprint and duration for each activity
+ */
 
 public class CampusTour implements CampusTourI {
     private double carbonfootprint;
@@ -29,7 +47,6 @@ public class CampusTour implements CampusTourI {
     ArrayList<Double> storeCost= new ArrayList<Double>();
     ArrayList<Integer> storeEffort = new ArrayList<Integer>();
     ArrayList<Integer> storeDuration = new ArrayList<Integer>();
-
     HashMap<String, String> activityList = new LinkedHashMap<String, String>();
 
 
@@ -37,9 +54,11 @@ public class CampusTour implements CampusTourI {
     VisitCafetiaI cafeteria = new Cafeteria();
     PickGiftI gift = new Gift();
     AttendLectureI lecture =new Lecture();
-
     Results result = new Results();
 
+    /**
+     * Constructor
+     */
     public CampusTour(BuildingEnum buildingIn, CafeteriaEnum cafeteriaIn, GiftEnum giftIn, LectureEnum lectureIn, TransitEnum transitIn){
         buildingName = buildingIn.name();
         cafeteriaName = cafeteriaIn.name();
@@ -48,13 +67,10 @@ public class CampusTour implements CampusTourI {
         transitBy = transitIn.name();
     }
 
-    public void print_title_content(){
-        System.out.println("**************    Welcome to Binghamton University Tour    **************");
-    }
 
     /**
      * visitBuilding method to print the cost, carbonfootprint, duration and effort
-     * stores the value in list
+     * stores the cost, carbonfootprint, duration and effort in key,value list
      */
     public void visitBuilding(){
         String buildingVisited = buildingName;
@@ -63,13 +79,10 @@ public class CampusTour implements CampusTourI {
             cost = building.costCalc(transitBy);
             duration = building.durationCalc(transitBy);
             effort = building.effortCalc(transitBy);
-
-            //store
             storeCost.add(cost);
             storeCo2.add(carbonfootprint);
             storeDuration.add(duration);
             storeEffort.add(effort);
-
             outputStr = "Selected Building : "+buildingVisited+" ,Transit BY:"+transitBy +"\n"+ " Carbonfoot Print: "+ carbonfootprint +" co2\n"+" Cost : "+cost +"$\n"+" Duration: "+ duration+" min\n"+" Effort: "+ effort+" Calories";
             //Store the values in hashmap
             activityList.put("Activity: Visit Building",outputStr);
@@ -78,7 +91,6 @@ public class CampusTour implements CampusTourI {
             cost = building.costCalc(transitBy);
             duration = building.durationCalc(transitBy);
             effort = building.effortCalc(transitBy);
-            //store
             storeCost.add(cost);
             storeCo2.add(carbonfootprint);
             storeDuration.add(duration);
@@ -89,13 +101,17 @@ public class CampusTour implements CampusTourI {
         }
     }
 
+    /**
+     * pick gift method to print the cost, carbonfootprint, duration and effort
+     * stores the cost, carbonfootprint, duration and effort in key,value list
+     */
+
     public void pickGift(){
         if (giftLocation.equals("UNIVERSITY_UNION")){
             carbonfootprint = gift.carbonFootCal(GiftEnum.UNIVERSITY_UNION.name());
             cost = gift.costCalc(GiftEnum.UNIVERSITY_UNION.name());
             duration = gift.durationCalc(GiftEnum.UNIVERSITY_UNION.name());
             effort = gift.effortCalc(GiftEnum.UNIVERSITY_UNION.name());
-            //store
             storeCost.add(cost);
             storeCo2.add(carbonfootprint);
             storeDuration.add(duration);
@@ -107,7 +123,6 @@ public class CampusTour implements CampusTourI {
             cost = gift.costCalc(GiftEnum.EVENT_CENTER.name());
             duration = gift.durationCalc(GiftEnum.EVENT_CENTER.name());
             effort = gift.effortCalc(GiftEnum.EVENT_CENTER.name());
-            //store
             storeCost.add(cost);
             storeCo2.add(carbonfootprint);
             storeDuration.add(duration);
@@ -117,13 +132,16 @@ public class CampusTour implements CampusTourI {
         }
     }
 
+    /**
+     * selecting cafeteria method to print the cost, carbonfootprint, duration and effort
+     * stores the cost, carbonfootprint, duration and effort in key,value list
+     */
     public void selectCafeteria(){
         if (cafeteriaName.equals("CIW")){
             carbonfootprint = cafeteria.carbonFootCal(CafeteriaEnum.CIW.name());
             cost = cafeteria.costCalc(CafeteriaEnum.CIW.name());
             duration = cafeteria.durationCalc(CafeteriaEnum.CIW.name());
             effort = cafeteria.effortCalc(CafeteriaEnum.CIW.name());
-            //store
             storeCost.add(cost);
             storeCo2.add(carbonfootprint);
             storeDuration.add(duration);
@@ -135,7 +153,6 @@ public class CampusTour implements CampusTourI {
             cost = cafeteria.costCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
             duration = cafeteria.durationCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
             effort = cafeteria.effortCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
-            //store
             storeCost.add(cost);
             storeCo2.add(carbonfootprint);
             storeDuration.add(duration);
@@ -145,13 +162,16 @@ public class CampusTour implements CampusTourI {
         }
     }
 
+    /**
+     * selecting lecture to print the cost, carbonfootprint, duration and effort
+     * stores the cost, carbonfootprint, duration and effort in key,value list
+     */
     public void attendLecture(){
         if (lectureName.equals("CS540")){
             carbonfootprint = lecture.carbonFootCal(LectureEnum.CS540.name());
             cost = lecture.costCalc(LectureEnum.CS540.name());
             duration = lecture.durationCalc(LectureEnum.CS540.name());
             effort = lecture.effortCalc(LectureEnum.CS540.name());
-            //store
             storeCost.add(cost);
             storeCo2.add(carbonfootprint);
             storeDuration.add(duration);
@@ -163,7 +183,6 @@ public class CampusTour implements CampusTourI {
             cost = lecture.costCalc(LectureEnum.CS542.name());
             duration = lecture.durationCalc(LectureEnum.CS542.name());
             effort = lecture.effortCalc(LectureEnum.CS542.name());
-            //store
             storeCost.add(cost);
             storeCo2.add(carbonfootprint);
             storeDuration.add(duration);
@@ -175,6 +194,11 @@ public class CampusTour implements CampusTourI {
     }
 
 
+
+
+    /**
+     *Get Sum of elements from Integer Arraylist
+     */
     public Integer getIntSum(ArrayList<Integer> inp){
         Integer sum = 0;
         for (int i : inp) {
@@ -183,20 +207,29 @@ public class CampusTour implements CampusTourI {
         return sum;
     }
 
+
+    /**
+     *Get Sum of elements from Double Arraylist
+     */
     public Double getDoubleSum(ArrayList<Double> inp){
         Double sum = 0.0;
         for(Double d : inp)
             sum += d;
         return sum;
     }
+
+    /**
+     *Method to display the whole tour of student.
+     */
     public void displayTour(){
         result.FileOutputDisplay("**************    Welcome to Binghamton University Tour    **************");
         result.TerminalOutput("**************    Welcome to Binghamton University Tour    **************");
-        //Display Activity visitBuilding
+        //Display Activity
         for (Map.Entry<String, String> set : activityList.entrySet()) {
             result.FileOutputDisplay(set.getKey() + " :\n " + set.getValue()+"\n");
             result.TerminalOutput(set.getKey() + " :\n " + set.getValue()+"\n");
         }
+        //Display Total
         result.FileOutputDisplay("Total Tour Carbonfootprint: "+ df.format(getDoubleSum(storeCo2))+" co2"+", cost: "+getDoubleSum(storeCost)+"$, Duration: "+getIntSum(storeDuration)+" min, Effort: "+getIntSum(storeEffort) +" Calories");
         result.TerminalOutput("Total Tour Carbonfootprint: "+ df.format(getDoubleSum(storeCo2))+" co2"+", cost: "+getDoubleSum(storeCost)+"$, Duration: "+getIntSum(storeDuration)+" min, Effort: "+getIntSum(storeEffort) +" Calories");
         }
