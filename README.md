@@ -59,7 +59,20 @@ Command: ant -buildfile studentRecordsBackupTree/src/build.xml run -Darg0=bstInp
 -----------------------------------------------------------------------
 ## Description:
 
+Binghamton University Campus Tour was implemented using Builder Pattern, In this campus tour student need to complete four different activities as part of campus tour.
 
+Student can perform this activities in any order.
+
+Activity 1: To visit the Building (By Bus or Walk)
+Activity 2: To Pick the gift from UNIVERSITY_UNION or EVENTS_CENTER
+Activity 3: To Select cafeteria for lunch (CIW or MOUNTAIN_VIEW) 
+Activity 4: To attend Lecture (CS542 (In Person class) or CS540 (Online class)
+
+For Every activity there is Carbonfootprint measured in c02, duration measured in minutes, cost is measured in dollars and effort meassure in calories.
+
+Assumptions made for every activity:
+For Bus Tour to visit building (Activity 1) :
+Cost is 3$, carbonfootprint is 
 
  
 
