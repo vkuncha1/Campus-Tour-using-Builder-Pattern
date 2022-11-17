@@ -66,8 +66,7 @@ Command: ant -buildfile studentRecordsBackupTree/src/build.xml run -Darg0=bstInp
 -----------------------------------------------------------------------
 ## References:
 
-1. https://www.geeksforgeeks.org/binary-search-tree-data-structure/
-2. https://www.geeksforgeeks.org/filewriter-class-in-java/
+1. https://www.geeksforgeeks.org/linkedhashmap-class-in-java/
 
 -----------------------------------------------------------------------
 ### Academic Honesty statement:
