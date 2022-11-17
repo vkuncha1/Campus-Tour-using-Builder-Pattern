@@ -1,13 +1,13 @@
 package myCampusTour.myTour;
 
 public class CarbonFootPrint implements CarbonFootprintI{
-    private float carbonfootprint;
+    private double carbonfootprint;
 
-    public CarbonFootPrint(float carbonfootprintIn) {
+    public CarbonFootPrint(double carbonfootprintIn) {
         carbonfootprint = carbonfootprintIn;
     }
 
-    public float getCarbonfootprint() {
+    public double getCarbonfootprint() {
         return carbonfootprint;
     }
 

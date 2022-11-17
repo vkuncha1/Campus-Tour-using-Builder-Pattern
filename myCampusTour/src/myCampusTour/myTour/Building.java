@@ -2,6 +2,7 @@ package myCampusTour.myTour;
 
 import myCampusTour.TourEnums.BuildingEnum;
 import myCampusTour.TourEnums.TransitEnum;
+import myCampusTour.myTour.CarbonFootprintI;
 
 public class Building implements VisitBuildingI {
     private double carbonFootPrint;
@@ -9,7 +10,7 @@ public class Building implements VisitBuildingI {
     private int duration;
     private int effort;
 
-
+    CarbonFootprintI cObj;
 
     /**
      * @param valueIn

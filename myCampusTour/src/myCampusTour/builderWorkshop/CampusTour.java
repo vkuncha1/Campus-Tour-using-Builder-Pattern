@@ -190,13 +190,14 @@ public class CampusTour implements CampusTourI {
         return sum;
     }
     public void displayTour(){
-        System.out.println("**************    Welcome to Binghamton University Tour    **************");
+        result.FileOutputDisplay("**************    Welcome to Binghamton University Tour    **************");
+        result.TerminalOutput("**************    Welcome to Binghamton University Tour    **************");
         //Display Activity visitBuilding
         for (Map.Entry<String, String> set : activityList.entrySet()) {
-            System.out.println(set.getKey() + " :\n " + set.getValue()+"\n");
+            result.FileOutputDisplay(set.getKey() + " :\n " + set.getValue()+"\n");
+            result.TerminalOutput(set.getKey() + " :\n " + set.getValue()+"\n");
         }
-        System.out.println("Total Tour Carbonfootprint: "+ df.format(getDoubleSum(storeCo2))+" co2"+", cost: "+getDoubleSum(storeCost)+"$, Duration: "+getIntSum(storeDuration)+" min, Effort: "+getIntSum(storeEffort) +" Calories");
-
+        result.FileOutputDisplay("Total Tour Carbonfootprint: "+ df.format(getDoubleSum(storeCo2))+" co2"+", cost: "+getDoubleSum(storeCost)+"$, Duration: "+getIntSum(storeDuration)+" min, Effort: "+getIntSum(storeEffort) +" Calories");
+        result.TerminalOutput("Total Tour Carbonfootprint: "+ df.format(getDoubleSum(storeCo2))+" co2"+", cost: "+getDoubleSum(storeCost)+"$, Duration: "+getIntSum(storeDuration)+" min, Effort: "+getIntSum(storeEffort) +" Calories");
         }
-
 }

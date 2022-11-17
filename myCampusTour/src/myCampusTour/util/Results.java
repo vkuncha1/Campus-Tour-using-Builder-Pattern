@@ -3,6 +3,7 @@ package myCampusTour.util;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Map;
 
 public class Results implements FileDisplayInterface, StdoutDisplayInterface {
     MyLogger logger = new MyLogger();
@@ -29,6 +30,7 @@ public class Results implements FileDisplayInterface, StdoutDisplayInterface {
             conf.writeError(Err);
         }
     }
+
 
     /**
      * @param valueIn
