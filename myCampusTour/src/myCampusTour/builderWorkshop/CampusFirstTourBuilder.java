@@ -1,6 +1,6 @@
 package myCampusTour.builderWorkshop;
 
-public class CampusTourBuilder implements BuilderWorkshopI{
+public class CampusFirstTourBuilder implements BuilderWorkshopI{
     public void construct(CampusTour ct){
         ct.visitBuilding();
         ct.pickGift();

@@ -6,6 +6,7 @@ import myCampusTour.util.FileDisplayInterface;
 import myCampusTour.util.Results;
 import myCampusTour.util.StdoutDisplayInterface;
 
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class CampusTour implements CampusTourI {
@@ -21,11 +22,13 @@ public class CampusTour implements CampusTourI {
     private String transitBy;
 
     private String outputStr;
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
-    ArrayList<String> store_building_list = new ArrayList<String>();
-    ArrayList<String> store_cafeteria_list = new ArrayList<String>();
-    ArrayList<String> store_gift_list = new ArrayList<String>();
-    ArrayList<String> store_lecture_list = new ArrayList<String>();
+
+    ArrayList<Double> storeCo2 = new ArrayList<Double>();
+    ArrayList<Double> storeCost= new ArrayList<Double>();
+    ArrayList<Integer> storeEffort = new ArrayList<Integer>();
+    ArrayList<Integer> storeDuration = new ArrayList<Integer>();
 
     HashMap<String, String> activityList = new LinkedHashMap<String, String>();
 
@@ -60,7 +63,14 @@ public class CampusTour implements CampusTourI {
             cost = building.costCalc(transitBy);
             duration = building.durationCalc(transitBy);
             effort = building.effortCalc(transitBy);
-            outputStr = "Selected Building : "+buildingVisited+" ,Transit BY: BUS" +"\n"+ " Carbonfoot Print: "+ carbonfootprint +"\n"+" Cost : "+cost +"\n"+" Duration: "+ duration+"\n"+" Effort: "+ effort;
+
+            //store
+            storeCost.add(cost);
+            storeCo2.add(carbonfootprint);
+            storeDuration.add(duration);
+            storeEffort.add(effort);
+
+            outputStr = "Selected Building : "+buildingVisited+" ,Transit BY:"+transitBy +"\n"+ " Carbonfoot Print: "+ carbonfootprint +" co2\n"+" Cost : "+cost +"$\n"+" Duration: "+ duration+" min\n"+" Effort: "+ effort+" Calories";
             //Store the values in hashmap
             activityList.put("Activity: Visit Building",outputStr);
         } else if (transitBy.equals("WALK")) {
@@ -68,7 +78,12 @@ public class CampusTour implements CampusTourI {
             cost = building.costCalc(transitBy);
             duration = building.durationCalc(transitBy);
             effort = building.effortCalc(transitBy);
-            outputStr = "Selected Building : "+buildingVisited+" ,Transit BY: Walk" +"\n"+ " Carbonfoot Print: "+ carbonfootprint +"\n"+" Cost : "+cost +"\n"+" Duration: "+ duration+"\n"+" Effort: "+ effort;
+            //store
+            storeCost.add(cost);
+            storeCo2.add(carbonfootprint);
+            storeDuration.add(duration);
+            storeEffort.add(effort);
+            outputStr = "Selected Building : "+buildingVisited+" ,Transit BY:"+transitBy +"\n"+ " Carbonfoot Print: "+ carbonfootprint +" co2\n"+" Cost : "+cost +"$\n"+" Duration: "+ duration+" min\n"+" Effort: "+ effort+" Calories";
             //Store the values in hashmap
             activityList.put("Activity: Visit Building",outputStr);
         }
@@ -80,14 +95,24 @@ public class CampusTour implements CampusTourI {
             cost = gift.costCalc(GiftEnum.UNIVERSITY_UNION.name());
             duration = gift.durationCalc(GiftEnum.UNIVERSITY_UNION.name());
             effort = gift.effortCalc(GiftEnum.UNIVERSITY_UNION.name());
-            outputStr = "Selected Location to Pick Gift : "+giftLocation +"\n"+ " Carbonfoot Print: "+ carbonfootprint +"\n"+" Cost : "+cost +"\n"+" Duration: "+ duration+"\n"+" Effort: "+ effort;
+            //store
+            storeCost.add(cost);
+            storeCo2.add(carbonfootprint);
+            storeDuration.add(duration);
+            storeEffort.add(effort);
+            outputStr = "Selected Location to Pick Gift : "+giftLocation +"\n"+ " Carbonfoot Print: "+ carbonfootprint +" co2\n"+" Cost : "+cost +"$\n"+" Duration: "+ duration+" min\n"+" Effort: "+ effort+" Calories";
             activityList.put("Activity: Pick Gift",outputStr);
         } else if (giftLocation.equals("EVENT_CENTER")) {
             carbonfootprint = gift.carbonFootCal(GiftEnum.EVENT_CENTER.name());
             cost = gift.costCalc(GiftEnum.EVENT_CENTER.name());
             duration = gift.durationCalc(GiftEnum.EVENT_CENTER.name());
             effort = gift.effortCalc(GiftEnum.EVENT_CENTER.name());
-            outputStr = "Selected Location to Pick Gift : "+giftLocation +"\n"+ " Carbonfoot Print: "+ carbonfootprint +"\n"+" Cost : "+cost +"\n"+" Duration: "+ duration+"\n"+" Effort: "+ effort;
+            //store
+            storeCost.add(cost);
+            storeCo2.add(carbonfootprint);
+            storeDuration.add(duration);
+            storeEffort.add(effort);
+            outputStr = "Selected Location to Pick Gift : "+giftLocation +"\n"+ " Carbonfoot Print: "+ carbonfootprint +" co2\n"+" Cost : "+cost +"$\n"+" Duration: "+ duration+" min\n"+" Effort: "+ effort+" Calories";
             activityList.put("Activity: Pick Gift",outputStr);
         }
     }
@@ -98,14 +123,24 @@ public class CampusTour implements CampusTourI {
             cost = cafeteria.costCalc(CafeteriaEnum.CIW.name());
             duration = cafeteria.durationCalc(CafeteriaEnum.CIW.name());
             effort = cafeteria.effortCalc(CafeteriaEnum.CIW.name());
-            outputStr = "Selected Cafeteria for Lunch : "+cafeteriaName+"\n"+ " Carbonfoot Print: "+ carbonfootprint +"\n"+" Cost : "+cost +"\n"+" Duration: "+ duration+"\n"+" Effort: "+ effort;
+            //store
+            storeCost.add(cost);
+            storeCo2.add(carbonfootprint);
+            storeDuration.add(duration);
+            storeEffort.add(effort);
+            outputStr = "Selected Cafeteria for Lunch : "+cafeteriaName+"\n"+ " Carbonfoot Print: "+ carbonfootprint +" co2\n"+" Cost : "+cost +"$\n"+" Duration: "+ duration+" min\n"+" Effort: "+ effort+" Calories";
             activityList.put("Activity: Choose Cafeteria",outputStr);
         } else if (cafeteriaName.equals("MOUNTAIN_VIEW")) {
             carbonfootprint = cafeteria.carbonFootCal(CafeteriaEnum.MOUNTAIN_VIEW.name());
             cost = cafeteria.costCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
             duration = cafeteria.durationCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
             effort = cafeteria.effortCalc(CafeteriaEnum.MOUNTAIN_VIEW.name());
-            outputStr = "Selected Cafeteria for Lunch : "+cafeteriaName +"\n"+ " Carbonfoot Print: "+ carbonfootprint +"\n"+" Cost : "+cost +"$ [Orginal Cost:"+(cost/1.05)+"$ Surcharge: "+(0.05*(cost/1.05))+"$]\n"+" Duration: "+ duration+"\n"+" Effort: "+ effort;
+            //store
+            storeCost.add(cost);
+            storeCo2.add(carbonfootprint);
+            storeDuration.add(duration);
+            storeEffort.add(effort);
+            outputStr = "Selected Cafeteria for Lunch : "+cafeteriaName +"\n"+ " Carbonfoot Print: "+ carbonfootprint +" co2\n"+" Cost : "+cost +"$ [Orginal Cost:"+(cost/1.05)+"$ Surcharge: "+(0.05*(cost/1.05))+"$]\n"+" Duration: "+ duration+" min\n"+" Effort: "+ effort+" Calories";
             activityList.put("Activity: Choose Cafeteria",outputStr);
         }
     }
@@ -116,25 +151,52 @@ public class CampusTour implements CampusTourI {
             cost = lecture.costCalc(LectureEnum.CS540.name());
             duration = lecture.durationCalc(LectureEnum.CS540.name());
             effort = lecture.effortCalc(LectureEnum.CS540.name());
-            outputStr = "Selected Lecture : "+lectureName +"\n"+ " Carbonfoot Print: "+ carbonfootprint +"\n"+" Cost : "+cost +"\n"+" Duration: "+ duration+"\n"+" Effort: "+ effort;
+            //store
+            storeCost.add(cost);
+            storeCo2.add(carbonfootprint);
+            storeDuration.add(duration);
+            storeEffort.add(effort);
+            outputStr = "Selected Lecture : "+lectureName +"\n"+ " Carbonfoot Print: "+ carbonfootprint +" co2\n"+" Cost : "+cost +"$\n"+" Duration: "+ duration+" min\n"+" Effort: "+ effort+" Calories";
             activityList.put("Activity: Select Lecture",outputStr);
         } else if (lectureName.equals("CS542")) {
             carbonfootprint = lecture.carbonFootCal(LectureEnum.CS542.name());
             cost = lecture.costCalc(LectureEnum.CS542.name());
             duration = lecture.durationCalc(LectureEnum.CS542.name());
             effort = lecture.effortCalc(LectureEnum.CS542.name());
-            outputStr = "Selected Lecture : "+lectureName +"\n"+ " Carbonfoot Print: "+ carbonfootprint +"\n"+" Cost : "+cost +"$ [Orginal Cost:"+(cost/1.10)+"$ Surcharge: "+(0.10*(cost/1.10))+"$]\n"+" Duration: "+ duration+"\n"+" Effort: "+ effort;
+            //store
+            storeCost.add(cost);
+            storeCo2.add(carbonfootprint);
+            storeDuration.add(duration);
+            storeEffort.add(effort);
+            outputStr = "Selected Lecture : "+lectureName +"\n"+ " Carbonfoot Print: "+ carbonfootprint +" co2\n"+" Cost : "+cost +"$ [Orginal Cost:"+(cost/1.10)+"$ Surcharge: "+(0.10*(cost/1.10))+"$]\n"+" Duration: "+ duration+" min\n"+" Effort: "+ effort+" Calories";
             activityList.put("Activity: Select Lecture",outputStr);
         }
 
     }
 
+
+    public Integer getIntSum(ArrayList<Integer> inp){
+        Integer sum = 0;
+        for (int i : inp) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    public Double getDoubleSum(ArrayList<Double> inp){
+        Double sum = 0.0;
+        for(Double d : inp)
+            sum += d;
+        return sum;
+    }
     public void displayTour(){
         System.out.println("**************    Welcome to Binghamton University Tour    **************");
         //Display Activity visitBuilding
         for (Map.Entry<String, String> set : activityList.entrySet()) {
             System.out.println(set.getKey() + " :\n " + set.getValue()+"\n");
         }
+        System.out.println("Total Tour Carbonfootprint: "+ df.format(getDoubleSum(storeCo2))+" co2"+", cost: "+getDoubleSum(storeCost)+"$, Duration: "+getIntSum(storeDuration)+" min, Effort: "+getIntSum(storeEffort) +" Calories");
+
         }
 
 }

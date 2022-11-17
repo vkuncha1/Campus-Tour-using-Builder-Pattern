@@ -1,10 +1,7 @@
 package myCampusTour.driver;
 
 import myCampusTour.TourEnums.*;
-import myCampusTour.builderWorkshop.BuilderWorkshopI;
-import myCampusTour.builderWorkshop.CampusTour;
-import myCampusTour.builderWorkshop.CampusTourBuilder;
-import myCampusTour.builderWorkshop.CampusTourI;
+import myCampusTour.builderWorkshop.*;
 
 /**
  * Driver code used by student for write their orientation plan.
@@ -21,11 +18,12 @@ public class Driver {
 		 */
 		//First Instance
 		CampusTourI myFirstTour = new CampusTour(BuildingEnum.WATSON, CafeteriaEnum.MOUNTAIN_VIEW, GiftEnum.EVENT_CENTER, LectureEnum.CS542, TransitEnum.WALK);
-		BuilderWorkshopI mbw = new CampusTourBuilder();
+		BuilderWorkshopI mbw = new CampusFirstTourBuilder();
 		mbw.construct((CampusTour) myFirstTour);
 		//Second Instance
-
-
+		CampusTourI mySecondTour = new CampusTour(BuildingEnum.ITC, CafeteriaEnum.CIW, GiftEnum.UNIVERSITY_UNION, LectureEnum.CS540, TransitEnum.BUS);
+		BuilderWorkshopI sbw = new CampusSecondTourBuilder();
+		sbw.construct((CampusTour) mySecondTour);
 
 //	    if (args.length != 2 || args[0].equals("${arg0}") || args[1].equals("${arg1}")) {
 //
