@@ -3,13 +3,11 @@ package myCampusTour.myTour;
 import myCampusTour.TourEnums.CafeteriaEnum;
 
 public class Cafeteria implements VisitCafetiaI {
-    private double carbonFootPrint;
-    private double cost;
-    private int duration;
-    private int effort;
 
-
-
+    CarbonFootprintI carbonfootprintIns = new CarbonFootPrint();
+    CostI costIns = new Cost();
+    DurationI durationIns = new Duration();
+    EffortI effortIns = new Effort();
 
     /**
      * @param valueIn
@@ -17,58 +15,31 @@ public class Cafeteria implements VisitCafetiaI {
      */
     @Override
     public double carbonFootCal(String valueIn) {
-        if (valueIn.equals(CafeteriaEnum.CIW.name())){
-            //costDecl.CarbonFootPrint(1.7);
-            return carbonFootPrint = 1.7;
-        }
-        else if(valueIn.equals(CafeteriaEnum.MOUNTAIN_VIEW.name())){
-            return carbonFootPrint = 0.6;
-        }
-        return 0;
+        double co2Evaluated;
+        co2Evaluated = carbonfootprintIns.getCarbonfootprint(valueIn);
+        return co2Evaluated;
     }
 
-    /**
-     * @param valueIn
-     * @return
-     */
     @Override
     public double costCalc(String valueIn) {
-        if (valueIn.equals(CafeteriaEnum.CIW.name())){
-            return cost = 2.00;
-        }
-        else if(valueIn.equals(CafeteriaEnum.MOUNTAIN_VIEW.name())){
-            return cost = 2.00 + (0.05*2.00);
-        }
-        return 0;
+        double costEvaluated;
+        costEvaluated=costIns.getCost(valueIn);
+        return costEvaluated;
     }
 
-    /**
-     * @param valueIn
-     * @return
-     */
     @Override
     public int durationCalc(String valueIn) {
-        if (valueIn.equals(CafeteriaEnum.CIW.name())){
-            return duration = 30;
-        }
-        else if(valueIn.equals(CafeteriaEnum.MOUNTAIN_VIEW.name())){
-            return duration = 5;
-        }
-        return 0;
+        int durationEvaluated;
+        durationEvaluated = durationIns.getDuration(valueIn);
+        return durationEvaluated;
     }
 
-    /**
-     * @param valueIn
-     * @return
-     */
     @Override
     public int effortCalc(String valueIn) {
-        if (valueIn.equals(CafeteriaEnum.CIW.name())){
-            return effort = 20;
-        }
-        else if(valueIn.equals(CafeteriaEnum.MOUNTAIN_VIEW.name())){
-            return effort = 3;
-        }
-        return 0;
+        int effortEvaluated;
+        effortEvaluated = effortIns.getEffort(valueIn);
+        return effortEvaluated;
+
     }
+
 }

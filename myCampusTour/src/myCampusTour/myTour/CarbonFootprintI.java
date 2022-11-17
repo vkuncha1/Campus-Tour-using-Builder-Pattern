@@ -1,5 +1,5 @@
 package myCampusTour.myTour;
 
 public interface CarbonFootprintI {
-    public double carbonFootCal(String valueIn);
+    public double getCarbonfootprint(String valueIn);
 }

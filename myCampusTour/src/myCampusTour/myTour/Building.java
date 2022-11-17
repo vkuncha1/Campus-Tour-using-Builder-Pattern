@@ -5,12 +5,11 @@ import myCampusTour.TourEnums.TransitEnum;
 import myCampusTour.myTour.CarbonFootprintI;
 
 public class Building implements VisitBuildingI {
-    private double carbonFootPrint;
-    private double cost;
-    private int duration;
-    private int effort;
 
-    CarbonFootprintI cObj;
+    CarbonFootprintI carbonfootprintIns = new CarbonFootPrint();
+    CostI costIns = new Cost();
+    DurationI durationIns = new Duration();
+    EffortI effortIns = new Effort();
 
     /**
      * @param valueIn
@@ -18,46 +17,31 @@ public class Building implements VisitBuildingI {
      */
     @Override
     public double carbonFootCal(String valueIn) {
-        if (valueIn.equals(TransitEnum.BUS.name())){
-            return carbonFootPrint = 2.5;
-        }
-        else if(valueIn.equals (TransitEnum.WALK.name())){
-            return carbonFootPrint = 0.5;
-        }
-        return 0;
+        double co2Evaluated;
+        co2Evaluated = carbonfootprintIns.getCarbonfootprint(valueIn);
+        return co2Evaluated;
     }
 
     @Override
     public double costCalc(String valueIn) {
-        if (valueIn.equals(TransitEnum.BUS.name())){
-            return cost = 3.00;
-        }
-        else if(valueIn.equals (TransitEnum.WALK.name())){
-            return cost = 1.00;
-        }
-        return 0;
+        double costEvaluated;
+        costEvaluated=costIns.getCost(valueIn);
+        return costEvaluated;
     }
 
     @Override
     public int durationCalc(String valueIn) {
-        if (valueIn.equals(TransitEnum.BUS.name())){
-            return duration = 5;
-        }
-        else if(valueIn.equals (TransitEnum.WALK.name())){
-            return duration = 15;
-        }
-        return 0;
+        int durationEvaluated;
+        durationEvaluated = durationIns.getDuration(valueIn);
+        return durationEvaluated;
     }
 
     @Override
     public int effortCalc(String valueIn) {
-        if (valueIn.equals(TransitEnum.BUS.name())){
-            return effort = 20;
-        }
-        else if(valueIn.equals (TransitEnum.WALK.name())){
-            return effort = 70;
-        }
-        return 0;
+        int effortEvaluated;
+        effortEvaluated = effortIns.getEffort(valueIn);
+        return effortEvaluated;
+
     }
 
 }

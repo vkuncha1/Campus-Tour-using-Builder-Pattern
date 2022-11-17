@@ -1,6 +1,6 @@
 package myCampusTour.myTour;
 
-public interface VisitBuildingI extends CarbonFootprintI,CostI,DurationI,EffortI{
+public interface VisitBuildingI {
     double carbonFootCal(String valueIn);
     public double costCalc(String valueIn);
     public int effortCalc(String valueIn);

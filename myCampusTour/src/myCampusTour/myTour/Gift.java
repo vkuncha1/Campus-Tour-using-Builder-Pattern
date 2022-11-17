@@ -1,11 +1,10 @@
 package myCampusTour.myTour;
 
 public class Gift implements PickGiftI{
-    private double carbonFootPrint;
-    private double cost;
-    private int duration;
-    private int effort;
-
+    CarbonFootprintI carbonfootprintIns = new CarbonFootPrint();
+    CostI costIns = new Cost();
+    DurationI durationIns = new Duration();
+    EffortI effortIns = new Effort();
 
     /**
      * @param valueIn
@@ -13,53 +12,31 @@ public class Gift implements PickGiftI{
      */
     @Override
     public double carbonFootCal(String valueIn) {
-        if (valueIn.equals("EVENT_CENTER")){
-            return carbonFootPrint = 0.2;
-        } else if (valueIn.equals("UNIVERSITY_UNION")) {
-            return carbonFootPrint = 0.4;
-        }
-        return 0;
+        double co2Evaluated;
+        co2Evaluated = carbonfootprintIns.getCarbonfootprint(valueIn);
+        return co2Evaluated;
     }
 
-    /**
-     * @param valueIn
-     * @return
-     */
     @Override
     public double costCalc(String valueIn) {
-        if (valueIn.equals("EVENT_CENTER")){
-            return cost = 0.2;
-        } else if (valueIn.equals("UNIVERSITY_UNION")) {
-            return cost = 0.4;
-        }
-        return 0;
+        double costEvaluated;
+        costEvaluated=costIns.getCost(valueIn);
+        return costEvaluated;
     }
 
-    /**
-     * @param valueIn
-     * @return
-     */
     @Override
     public int durationCalc(String valueIn) {
-        if (valueIn.equals("EVENT_CENTER")){
-            return duration = 10;
-        } else if (valueIn.equals("UNIVERSITY_UNION")) {
-            return duration = 5;
-        }
-        return 0;
+        int durationEvaluated;
+        durationEvaluated = durationIns.getDuration(valueIn);
+        return durationEvaluated;
     }
 
-    /**
-     * @param valueIn
-     * @return
-     */
     @Override
     public int effortCalc(String valueIn) {
-        if (valueIn.equals("EVENT_CENTER")){
-            return effort = 20;
-        } else if (valueIn.equals("UNIVERSITY_UNION")) {
-            return effort = 40;
-        }
-        return 0;
+        int effortEvaluated;
+        effortEvaluated = effortIns.getEffort(valueIn);
+        return effortEvaluated;
+
     }
+
 }

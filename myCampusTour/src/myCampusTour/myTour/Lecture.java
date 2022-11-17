@@ -1,10 +1,10 @@
 package myCampusTour.myTour;
 
 public class Lecture implements AttendLectureI {
-    private double carbonFootPrint;
-    private double cost;
-    private int duration;
-    private int effort;
+    CarbonFootprintI carbonfootprintIns = new CarbonFootPrint();
+    CostI costIns = new Cost();
+    DurationI durationIns = new Duration();
+    EffortI effortIns = new Effort();
 
     /**
      * @param valueIn
@@ -12,58 +12,31 @@ public class Lecture implements AttendLectureI {
      */
     @Override
     public double carbonFootCal(String valueIn) {
-        if (valueIn.equals("CS542")){
-            return carbonFootPrint = 0.23;
-        }
-        else if(valueIn.equals("CS540")){
-            return carbonFootPrint = 0.44;
-        }
-        return 0;
+        double co2Evaluated;
+        co2Evaluated = carbonfootprintIns.getCarbonfootprint(valueIn);
+        return co2Evaluated;
     }
 
-    /**
-     * @param valueIn
-     * @return
-     */
     @Override
     public double costCalc(String valueIn) {
-        if (valueIn.equals("CS542")){
-            return cost = 20 + (0.1*(20));
-
-        }
-        else if(valueIn.equals("CS540")){
-            return cost = 20;
-        }
-        return 0;
+        double costEvaluated;
+        costEvaluated=costIns.getCost(valueIn);
+        return costEvaluated;
     }
 
-    /**
-     * @param valueIn
-     * @return
-     */
     @Override
     public int durationCalc(String valueIn) {
-        if (valueIn.equals("CS542")){
-            return duration = 20;
-        }
-        else if(valueIn.equals("CS540")){
-            return duration = 15;
-        }
-        return 0;
+        int durationEvaluated;
+        durationEvaluated = durationIns.getDuration(valueIn);
+        return durationEvaluated;
     }
 
-    /**
-     * @param valueIn
-     * @return
-     */
     @Override
     public int effortCalc(String valueIn) {
-        if (valueIn.equals("CS542")){
-            return effort = 25;
-        }
-        else if(valueIn.equals("CS540")){
-            return effort = 5;
-        }
-        return 0;
+        int effortEvaluated;
+        effortEvaluated = effortIns.getEffort(valueIn);
+        return effortEvaluated;
+
     }
+
 }
