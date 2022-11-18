@@ -6,10 +6,9 @@ No of Slack days used : 0
 
 
 Following are the commands and the instructions to run ANT on project.
-#### Note: build.xml is present in studentCoursesBackup/src folder.
-#### Note: courseInfo.txt, coursePrefs.txt, errorLog.txt, regConflicts.txt, and regResults.txt to be placed in same directory level as src
+#### Note: build.xml is present in myCampusTour/src folder.
+#### Note: errorLog.txt to be placed in same directory level as src
 
-Assumptions : Input files are well formatted, and no dupulicates, Input File always available and not empty, UPDATE_VALUE is not empty
 
 -----------------------------------------------------------------------
 ## How to clean ?
@@ -29,23 +28,6 @@ Description: Compiles your code and generates .class files inside the BUILD fold
 ## How to run ?
 
 Command: ant -buildfile myCampusTour/src/build.xml run -Darg0=errorLog.txt -Darg1=1 
-
-
-
-
------------------------------------------------------------------------
-## Sample Input and Output
-
-
-
-#### Terminal Output
-
-
-
-
-#### errorLog.txt
-
-
 
 -----------------------------------------------------------------------
 
