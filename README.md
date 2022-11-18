@@ -14,21 +14,21 @@ Assumptions : Input files are well formatted, and no dupulicates, Input File alw
 -----------------------------------------------------------------------
 ## How to clean ?
 
-Command: ant -buildfile studentRecordsBackupTree/src/build.xml clean
+Command: ant -buildfile myCampusTour/src/build.xml clean
 
 Description: It cleans up all the .class files that were generated when code was compiled.
 
 -----------------------------------------------------------------------
 ## How to compile ?
 
-Command: ant -buildfile studentRecordsBackupTree/src/build.xml all
+Command: ant -buildfile myCampusTour/src/build.xml all
 
 Description: Compiles your code and generates .class files inside the BUILD folder.
 
 -----------------------------------------------------------------------
 ## How to run ?
 
-Command: ant -buildfile studentRecordsBackupTree/src/build.xml run -Darg0=bstInput.txt -Darg1=bstOutput.txt -Darg2=errorLog.txt -Darg3=1 -Darg4=3
+Command: ant -buildfile myCampusTour/src/build.xml run -Darg0=errorLog.txt -Darg1=1 
 
 
 
