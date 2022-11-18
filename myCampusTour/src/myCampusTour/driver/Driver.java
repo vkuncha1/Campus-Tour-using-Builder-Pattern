@@ -21,17 +21,17 @@ public class Driver {
 
 
 		if (args.length != 2 || args[0].equals("errorLog.txt") || args[1].equals("${arg1}")) {
-			//First Instance
-			CampusTourI myFirstTour = new CampusTour(BuildingEnum.WATSON, CafeteriaEnum.MOUNTAIN_VIEW, GiftEnum.EVENT_CENTER, LectureEnum.CS542, TransitEnum.WALK);
-			BuilderWorkshopI mbw = new CampusFirstTourBuilder();
-			mbw.construct((CampusTour) myFirstTour);
-			//Second Instance
-			CampusTourI mySecondTour = new CampusTour(BuildingEnum.ITC, CafeteriaEnum.CIW, GiftEnum.UNIVERSITY_UNION, LectureEnum.CS540, TransitEnum.BUS);
-			BuilderWorkshopI sbw = new CampusSecondTourBuilder();
-			sbw.construct((CampusTour) mySecondTour);
+		//First Instance
+		CampusTourI myFirstTour = new CampusTour(BuildingEnum.WATSON, CafeteriaEnum.MOUNTAIN_VIEW, GiftEnum.EVENT_CENTER, LectureEnum.CS542, TransitEnum.WALK);
+		BuilderWorkshopI mbw = new CampusFirstTourBuilder();
+		mbw.construct(myFirstTour);
+		//Second Instance
+		CampusTourI mySecondTour = new CampusTour(BuildingEnum.ITC, CafeteriaEnum.CIW, GiftEnum.UNIVERSITY_UNION, LectureEnum.CS540, TransitEnum.BUS);
+		BuilderWorkshopI sbw = new CampusSecondTourBuilder();
+		sbw.construct(mySecondTour);
 		}
 		else{
-			System.err.println("Error: Incorrect number of arguments. Program accepts 5 argumnets.");
+			System.err.println("Error: Incorrect number of arguments. Program accepts 2 argumnets.");
 			System.exit(0);
 		}
 

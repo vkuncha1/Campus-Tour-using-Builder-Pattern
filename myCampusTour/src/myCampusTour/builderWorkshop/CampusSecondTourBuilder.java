@@ -6,7 +6,7 @@ package myCampusTour.builderWorkshop;
  * the method has list of activities to be completed by the student.
  */
 public class CampusSecondTourBuilder implements BuilderWorkshopI{
-    public void construct(CampusTour ct){
+    public void construct(CampusTourI ct){
         ct.pickGift();
         ct.attendLecture();
         ct.visitBuilding();

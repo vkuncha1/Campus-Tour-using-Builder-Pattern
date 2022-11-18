@@ -9,4 +9,6 @@ public interface CampusTourI {
     public void pickGift();
     public void selectCafeteria();
     public void attendLecture();
+
+    public void displayTour();
 }
