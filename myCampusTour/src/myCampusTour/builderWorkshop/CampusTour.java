@@ -250,6 +250,7 @@ public class CampusTour implements CampusTourI {
     /**
      *Method to display the whole tour of student.
      */
+
     public void displayTour() {
         try {
             result.FileOutputDisplay("**************    Welcome to Binghamton University Tour    **************");

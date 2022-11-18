@@ -19,7 +19,6 @@ import myCampusTour.builderWorkshop.CampusTourI;
 public class Driver {
 	public static void main(String[] args) {
 
-
 		if (args.length != 2 || args[0].equals("errorLog.txt") || args[1].equals("${arg1}")) {
 		//First Instance
 		CampusTourI myFirstTour = new CampusTour(BuildingEnum.WATSON, CafeteriaEnum.MOUNTAIN_VIEW, GiftEnum.EVENT_CENTER, LectureEnum.CS542, TransitEnum.WALK);

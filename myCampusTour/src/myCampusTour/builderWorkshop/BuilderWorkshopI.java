@@ -6,5 +6,4 @@ package myCampusTour.builderWorkshop;
  */
 public interface BuilderWorkshopI {
     public void construct(CampusTourI ct);
-	
 }
