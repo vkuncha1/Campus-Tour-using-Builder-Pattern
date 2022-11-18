@@ -79,38 +79,38 @@ Cost is 1$,Carbonfootprint as 2.5 co2, Duration is 5 minutes and Effort of 70 Ca
 
 
 To Pick gift from University Union (Activity 2) :
-Carbonfoot Print: 0.4 co2
-Cost : 0.4$
-Duration: 5 min
+Carbonfoot Print: 0.4 co2,
+Cost : 0.4$,
+Duration: 5 min,
 Effort: 40 Calories
 To Pick gift from Events Center (Activity 2) :
-Carbonfoot Print: 0.6 co2
-Cost : 0.2$
-Duration: 10 min
+Carbonfoot Print: 0.6 co2,
+Cost : 0.2$,
+Duration: 10 min,
 Effort: 20 Calories
 
 To Choose Cafeteria as MOUNTAIN_VIEW (Activity 3) :
-Carbonfoot Print: 1.9 co2
-Cost : 2.1$ [Orginal Cost:2.0$ Surcharge: 0.1$] [5% of surcharage]
-Duration: 5 min
+Carbonfoot Print: 1.9 co2,
+Cost : 2.1$ [Orginal Cost:2.0$ Surcharge: 0.1$] [5% of surcharage],
+Duration: 5 min,
 Effort: 3 Calories
 
 To Choose Cafeteria as CIW (Activity 3) :
-Carbonfoot Print: 1.7 co2
-Cost : 2.0$
-Duration: 30 min
+Carbonfoot Print: 1.7 co2,
+Cost : 2.0$,
+Duration: 30 min,
 Effort: 20 Calories
 
 To attend Lecture CS540 (Activity 4) :
-Carbonfoot Print: 0.44 co2
-Cost : 20.0$
-Duration: 15 min
+Carbonfoot Print: 0.44 co2,
+Cost : 20.0$,
+Duration: 15 min,
 Effort: 20 Calories
 
 To attend Lecture CS542 (Activity 4) :
-Carbonfoot Print: 0.23 co2
-Cost : 22.0$ [Orginal Cost:20.0$ Surcharge: 2.0$] [10% of surcharge]
-Duration: 20 min
+Carbonfoot Print: 0.23 co2,
+Cost : 22.0$ [Orginal Cost:20.0$ Surcharge: 2.0$] [10% of surcharge],
+Duration: 20 min,
 Effort: 25 Calories
 
 -----------------------------------------------------------------------
