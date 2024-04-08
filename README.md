@@ -1,8 +1,3 @@
-# CS542: Assignment 3
-## Name: Venkata Achyuth Kunchapu
-No of Slack days used : 0
------------------------------------------------------------------------
------------------------------------------------------------------------
 
 
 Following are the commands and the instructions to run ANT on project.
